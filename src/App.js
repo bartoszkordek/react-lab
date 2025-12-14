@@ -8,6 +8,10 @@ function App() {
         setTitle(event.target.value);
     }
 
+    function handleSubmit(event) {
+        alert(title);
+    }
+
     let messsage = '';
     if (title.length === 0) {
         messsage = '';
@@ -30,6 +34,7 @@ function App() {
               )
             }
             <input type="text" onChange={handleChange} />
+            <button onClick={(handleSubmit)}>Pokaż tytuł filmu</button>
         </div>
     );
 }
