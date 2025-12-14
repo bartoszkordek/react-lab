@@ -4,6 +4,13 @@ import { useState } from 'react';
 function App() {
     const [title, setTitle] = useState('');
 
+    const movies = [
+        {title: "Wall-E"},
+        {title: "Pulp Fiction"},
+        {title: "Matrix"},
+        {title: "1670"},
+];
+
     let messsage = '';
     if (title.length === 0) {
         messsage = '';
@@ -16,9 +23,14 @@ function App() {
     } else {
         messsage = '';
     }
+    
     return (
         <div>
             <h1>My favourite movies to watch</h1>
+            <h2>Titles</h2>
+            <ul>
+                {movies.map((movie) => <li key={movie.title}>{movie.title}</li>)}
+            </ul>
             <h2>My favourite movie for today is {title}</h2>
             {
               title.length > 0 && (
