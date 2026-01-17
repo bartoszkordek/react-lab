@@ -9,7 +9,7 @@ function App() {
     const [movies, setMovies] = useState([]);
     return (
         <div className="container">
-            <MoviesList movies={movies}/>
+            <MoviesList movies={movies} onMoviesDelete={setMovies}/>
             <MovieForm onMovieSubmit={(movie) => setMovies([...movies, movie])}/>
         </div>
     );
