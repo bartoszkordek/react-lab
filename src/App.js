@@ -1,4 +1,5 @@
 import './App.css';
+import "milligram";
 import {useState} from "react";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     ];
 
     return (
-        <div>
+        <div className="container">
             <h1>My favourite movies to watch</h1>
             <h2>Titles</h2>
             <ul>
