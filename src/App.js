@@ -1,8 +1,9 @@
-import './App.css';
+import { useState } from "react";
+import "milligram"; 
 import MovieForm from "./MovieForm";
-import "milligram";
-import {useState} from "react";
 import MoviesList from './MoviesList';
+import './App.css';
+
 
 function App() {
     const [movies, setMovies] = useState([]);
