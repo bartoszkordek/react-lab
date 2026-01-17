@@ -7,10 +7,19 @@ import './App.css';
 
 function App() {
     const [movies, setMovies] = useState([]);
+    const [addingMovie, setAddingMovie] = useState(false);
+
     return (
         <div className="container">
             <MoviesList movies={movies} onMoviesDelete={setMovies}/>
-            <MovieForm onMovieSubmit={(movie) => setMovies([...movies, movie])}/>
+            {addingMovie ? (
+            <MovieForm onMovieSubmit={(movie) => {
+                setMovies([...movies, movie]);
+                setAddingMovie(false);
+            }}/>
+        ) : (
+            <button onClick={() => setAddingMovie(true)}>Add movie</button>
+        )}
         </div>
     );
 }
